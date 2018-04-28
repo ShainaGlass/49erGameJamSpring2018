@@ -8,8 +8,9 @@ public class playerMovement : MonoBehaviour {
     public Rigidbody2D rb2d;
     public float playerSpeed = 50;
     public float currentVelocity;
+    public GameObject MenuBox;
 
-    GameObject topObject;
+    public GameObject topObject;
     Rigidbody2D orb2d;
     // Use this for initialization
     void Start () {
@@ -31,15 +32,22 @@ public class playerMovement : MonoBehaviour {
         {
             orb2d.velocity = rb2d.velocity;
         }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        GameObject other = collision.gameObject;
-        if (other.CompareTag("FallingObject"))
+        if(Input.GetAxis("Fire1") > 0)
         {
-            other.tag = "StackedObject";
-            topObject = other;
-            orb2d = other.GetComponent<Rigidbody2D>();
+            MenuBox.GetComponent<MenuItem>().CheckBurger();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (topObject == null)
+        {
+            GameObject other = collision.gameObject;
+            if (other.CompareTag("FallingObject"))
+            {
+                other.tag = "StackedObject";
+                topObject = other;
+                orb2d = other.GetComponent<Rigidbody2D>();
+            }
         }
     }
 }

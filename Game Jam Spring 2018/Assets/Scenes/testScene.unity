@@ -161,19 +161,19 @@ Prefab:
         type: 2}
       propertyPath: foodLayers.Array.data[0]
       value: 
-      objectReference: {fileID: 1526860273971106, guid: 5b80503cc75bc434fa3c313b77da11b1,
+      objectReference: {fileID: 1573075955564822, guid: 18630ccd9b1218b4bb08766f9744f4a5,
         type: 2}
     - target: {fileID: 114802177312091608, guid: 3d7e125cc647f46499c0a7b84e717a9a,
         type: 2}
       propertyPath: foodLayers.Array.data[1]
       value: 
-      objectReference: {fileID: 1573075955564822, guid: 18630ccd9b1218b4bb08766f9744f4a5,
+      objectReference: {fileID: 1526860273971106, guid: 5b80503cc75bc434fa3c313b77da11b1,
         type: 2}
     - target: {fileID: 114802177312091608, guid: 3d7e125cc647f46499c0a7b84e717a9a,
         type: 2}
       propertyPath: foodLayers.Array.data[2]
       value: 
-      objectReference: {fileID: 1120782728869636, guid: 9fb6924ac90a5504c997a2357545226f,
+      objectReference: {fileID: 1406668927332464, guid: 2f76128ff1351b64086375c81ea1c932,
         type: 2}
     - target: {fileID: 114802177312091608, guid: 3d7e125cc647f46499c0a7b84e717a9a,
         type: 2}
@@ -185,8 +185,13 @@ Prefab:
         type: 2}
       propertyPath: foodLayers.Array.data[3]
       value: 
-      objectReference: {fileID: 1406668927332464, guid: 2f76128ff1351b64086375c81ea1c932,
+      objectReference: {fileID: 1120782728869636, guid: 9fb6924ac90a5504c997a2357545226f,
         type: 2}
+    - target: {fileID: 114802177312091608, guid: 3d7e125cc647f46499c0a7b84e717a9a,
+        type: 2}
+      propertyPath: objectsRemaining
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d7e125cc647f46499c0a7b84e717a9a, type: 2}
   m_IsPrefabParent: 0
@@ -220,11 +225,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodLayers:
   - {fileID: 1573075955564822, guid: 18630ccd9b1218b4bb08766f9744f4a5, type: 2}
-  - {fileID: 1120782728869636, guid: 9fb6924ac90a5504c997a2357545226f, type: 2}
+  - {fileID: 1526860273971106, guid: 5b80503cc75bc434fa3c313b77da11b1, type: 2}
   - {fileID: 1406668927332464, guid: 2f76128ff1351b64086375c81ea1c932, type: 2}
   - {fileID: 1064962324162552, guid: 301c2a375ea61e145b75c6856a5b8a4f, type: 2}
-  - {fileID: 1526860273971106, guid: 5b80503cc75bc434fa3c313b77da11b1, type: 2}
+  - {fileID: 1120782728869636, guid: 9fb6924ac90a5504c997a2357545226f, type: 2}
   chosenFoodLayers: []
+  numFoodLayers: 6
+  winText: {fileID: 0}
 --- !u!212 &642054832
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -510,6 +517,15 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 17.729923
       objectReference: {fileID: 0}
+    - target: {fileID: 61099635646405750, guid: 34b27e37a87c740459a61c06e3fb6a4b,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636490909265236, guid: 34b27e37a87c740459a61c06e3fb6a4b, type: 2}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34b27e37a87c740459a61c06e3fb6a4b, type: 2}
   m_IsPrefabParent: 0
@@ -712,6 +728,34 @@ Prefab:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1886659717}
+    - target: {fileID: 1691324800818448, guid: adf29557fde80cc42b4cab052a1f5c5e, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421191755748860, guid: adf29557fde80cc42b4cab052a1f5c5e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114617137793524154, guid: adf29557fde80cc42b4cab052a1f5c5e,
+        type: 2}
+      propertyPath: playerSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 50440667336756606, guid: adf29557fde80cc42b4cab052a1f5c5e,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50440667336756606, guid: adf29557fde80cc42b4cab052a1f5c5e,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114617137793524154, guid: adf29557fde80cc42b4cab052a1f5c5e,
+        type: 2}
+      propertyPath: MenuBox
+      value: 
+      objectReference: {fileID: 642054830}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adf29557fde80cc42b4cab052a1f5c5e, type: 2}
   m_IsPrefabParent: 0
