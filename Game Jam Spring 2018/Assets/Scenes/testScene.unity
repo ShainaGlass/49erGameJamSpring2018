@@ -231,7 +231,6 @@ MonoBehaviour:
   - {fileID: 1120782728869636, guid: 9fb6924ac90a5504c997a2357545226f, type: 2}
   chosenFoodLayers: []
   numFoodLayers: 6
-  winText: {fileID: 0}
 --- !u!212 &642054832
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -756,6 +755,12 @@ Prefab:
       propertyPath: MenuBox
       value: 
       objectReference: {fileID: 642054830}
+    - target: {fileID: 212223495471508728, guid: adf29557fde80cc42b4cab052a1f5c5e,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca14d068cf17f47c2b14b1da9af71816,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adf29557fde80cc42b4cab052a1f5c5e, type: 2}
   m_IsPrefabParent: 0
