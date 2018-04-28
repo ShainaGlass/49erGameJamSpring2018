@@ -8,7 +8,7 @@ public class GenerateRandomLayers : MonoBehaviour {
     public List<GameObject> foodLayers;
     public float MAX_SPAWN_TIME = 50;
     public float remainingTime = 0;
-    public float objectsRemaining = 10;
+    public float objectsRemaining;
 
     void Start()
     {
@@ -34,10 +34,7 @@ public class GenerateRandomLayers : MonoBehaviour {
                 remainingTime = MAX_SPAWN_TIME;
                 objectsRemaining--;
 
-                if (MAX_SPAWN_TIME > 50)
-                {
-                    MAX_SPAWN_TIME -= 10;
-                }
+                
             }
         }
     }
