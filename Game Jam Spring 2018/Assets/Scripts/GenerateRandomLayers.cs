@@ -24,8 +24,13 @@ public class GenerateRandomLayers : MonoBehaviour {
         {
             if (objectsRemaining > 0)
             {
+                int objectIndex = Random.Range(0, foodLayers.Count);
                 Vector3 position = new Vector3(Random.Range(-7f, 7f), Random.Range(0f, 5f), 0);
-                Instantiate(foodLayers[0], position, Quaternion.identity);
+
+                //Make an instance of the layer
+                Instantiate(foodLayers[objectIndex], position, Quaternion.identity);
+
+
                 remainingTime = MAX_SPAWN_TIME;
                 objectsRemaining--;
 

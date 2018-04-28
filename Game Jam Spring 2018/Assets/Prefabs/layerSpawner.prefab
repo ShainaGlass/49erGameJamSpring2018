@@ -53,6 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodLayers:
   - {fileID: 1128783320228782, guid: 353426abbba1d254ea28d791432d4b7a, type: 2}
+  - {fileID: 1128783320228782, guid: 353426abbba1d254ea28d791432d4b7a, type: 2}
+  - {fileID: 1128783320228782, guid: 353426abbba1d254ea28d791432d4b7a, type: 2}
+  - {fileID: 1128783320228782, guid: 353426abbba1d254ea28d791432d4b7a, type: 2}
   MAX_SPAWN_TIME: 50
   remainingTime: 0
   objectsRemaining: 10
