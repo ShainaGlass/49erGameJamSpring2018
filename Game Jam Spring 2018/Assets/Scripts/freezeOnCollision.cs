@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class freezeOnCollision : MonoBehaviour {
-    public Rigidbody2D rb2d;
+    Rigidbody2D rb2d;
     GameObject topObject;
     Rigidbody2D orb2d;
     void Start()
@@ -21,13 +21,16 @@ public class freezeOnCollision : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject other = collision.gameObject;
-        if (other.CompareTag("FallingObject"))
+        if (topObject == null)
         {
-            other.tag = "StackedObject";
-            topObject = other;
-            orb2d = other.GetComponent<Rigidbody2D>();
-        }
+            GameObject other = collision.gameObject;
+            if (other.CompareTag("FallingObject"))
+            {
+                other.tag = "StackedObject";
+                topObject = other;
+                orb2d = other.GetComponent<Rigidbody2D>();
+            }
+        }        
     }
 
 }
