@@ -8,8 +8,11 @@ public class playerMovement : MonoBehaviour {
     public Rigidbody2D rb2d;
     public float playerSpeed = 50;
     public float currentVelocity;
-	// Use this for initialization
-	void Start () {
+
+    GameObject topObject;
+    Rigidbody2D orb2d;
+    // Use this for initialization
+    void Start () {
         rb2d = GetComponent<Rigidbody2D>();
 	}
 	
@@ -23,11 +26,20 @@ public class playerMovement : MonoBehaviour {
         tempVelocity.x = Mathf.Clamp(mousePos.x - transform.position.x, -1, 1) * playerSpeed;
         currentVelocity = tempVelocity.x;
         rb2d.velocity = tempVelocity;
-	}
+
+        if (topObject != null)
+        {
+            orb2d.velocity = rb2d.velocity;
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject other = collision.gameObject;
-        Rigidbody2D orb2d = other.GetComponent<Rigidbody2D>();
-        orb2d.velocity = rb2d.velocity;
+        if (other.CompareTag("FallingObject"))
+        {
+            other.tag = "StackedObject";
+            topObject = other;
+            orb2d = other.GetComponent<Rigidbody2D>();
+        }
     }
 }
